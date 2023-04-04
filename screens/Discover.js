@@ -72,11 +72,21 @@ const Discover = () => {
             setBl_lng(details?.geometry?.viewport?.southwest?.lng);
             setTr_lat(details?.geometry?.viewport?.northeast?.lat);
             setTr_lng(details?.geometry?.viewport?.northeast?.lng);
+            console.log(data,details);
           }}
           query={{
-            key: "YOUR_API_KEY",
+            key: "f410d8d22bmsh143fb06809e8aa1p186f60jsnc8899cd3f1aa",
             language: "en",
           }}
+
+          // requestUrl={{
+          //   useOnPlatform: 'web', // or "all"
+          //   url:
+          //     'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api', // or any proxy server that hits https://maps.googleapis.com/maps/api
+          //   headers: {
+          //     Authorization: `an auth token`, // if required for your proxy
+          //   },
+          // }}
         />
       </View>
 

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive tourism app using voice</title>
+
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+    <!-- custom css cdn link -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- maps -->
+    <script id="search-js" defer src=""https://api.mapbox.com/search-js/v1.0.0-beta.14/web.js""></script>
+   
+    <script>
+    const accessToken = 'pk.eyJ1Ijoic2Frc2hpaWlpaWkwMiIsImEiOiJjbGV6ZzJzZXUwYjVlM3dzN3ZpandtdnQ3In0.MYMrsDHDrb8fMPpv5HQmtg';
+
+    const script = document.getElementById('search-js');
+    script.onload = function() {
+    mapboxsearch.autofill({
+        accessToken
+    });
+    };
+    </script>
+
+
+</head>
+<body>
+
+    <!-- header section starts -->
+    <header>
+        <a href="#" class="logo">Travel</a>
+
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#explore">Explore</a>
+            <a href="#package">Search</a>
+            <a href="map2.html">Map</a>
+            <a href="#review">Review</a>
+            <a href="#contact">Contact</a>
+
+        </nav>
+
+        <div class="icon" >
+            <a class="fas fa-search" id="search-button"></a>
+            <a class="fas fa-user" id="login-button" href="login.html" ></a>
+        
+        </div>
+
+        <form action="" class="search-bar-container">
+            <input type="search" id="search-bar" placeholder="search here....">
+            <label for="search-bar" class="fas fa-search"></label>
+        </form>
+
+    </header>
+    <!-- header section ends -->
+    
+<!-- Home section starts here -->
+
+<section class="home" id="home">
+    <div class="content"> 
+        <h3>Adventure is worthwhile</h3>
+        <p>Discover new places with us, Adventure awaits</p>
+        <a href="#" class="btn">Discover more</a>
+    </div> 
+
+    <div class="controls">
+        <span class="vid-btn active" data-src="images/vid1.mp4"></span>
+        <span class="vid-btn" data-src="images/vid2.mp4"></span>
+        <span class="vid-btn" data-src="images/vid3.mp4"></span>
+        <span class="vid-btn" data-src="images/vid4.mp4"></span>
+        <span class="vid-btn" data-src="images/vid5.mp4"></span>
+    </div>
+
+    <div class="video-container">
+        <video src="images/vid3.mp4" id="video-slider" loop autoplay muted></video>
+    </div>
+
+</section>
+<!-- Home section ends here -->
+
+    <!-- custom js file link -->
+    <script src="script.js"></script>
+</body>
+</html>
