@@ -20,7 +20,7 @@ import { getPlacesData } from "../api";
 const Discover = () => {
   const navigation = useNavigation();
 
-  const [type, setType] = useState("restaurants");
+  const [type, setType] = useState("restaurants","attractions","hotels");
   const [isLoading, setIsLoading] = useState(false);
   const [mainData, setMainData] = useState([]);
   const [bl_lat, setBl_lat] = useState(null);

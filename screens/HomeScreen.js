@@ -21,8 +21,7 @@ import { Container, Navbar } from "react-bootstrap";
 //   FaYoutubeSquare,
 // } from "react-icons/fa";
 
-import { NavLink } from "react-router-dom";
-
+import New from "./New";
 import { BsFillPersonFill} from "react-icons/bs";
 
 
@@ -58,12 +57,13 @@ const HomeScreen = () => {
                         
           <a onClick={() => navigation.navigate("Map")} href="#Map">Map</a>           
            
-          <a href="#contact">Contact</a>           
+          <a onClick={()=> navigation.navigate("Contact")} href="#Contact">Contact</a>           
           
 
           <ul className="icon">
+            {/* <NavLink to="/New"><BsFillPersonFill></BsFillPersonFill></NavLink> */}
             
-              <a onClick={() => navigation.navigate("Login")} href="#Login"><BsFillPersonFill></BsFillPersonFill>
+              <a onClick={() => navigation.navigate("New")} href="#New"><BsFillPersonFill></BsFillPersonFill>
                 </a>
 
             

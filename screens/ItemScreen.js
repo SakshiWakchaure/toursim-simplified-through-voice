@@ -152,6 +152,8 @@ const ItemScreen = ({ route }) => {
               <Text className="text-lg">{data?.address}</Text>
             </View>
           )}
+      
+           
 
           <View className="mt-4 px-4 py-4 rounded-lg bg-[#06B2BE] items-center justify-center mb-12">
             <Text className="text-3xl font-semibold uppercase tracking-wider text-gray-100">

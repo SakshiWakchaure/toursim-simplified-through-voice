@@ -5,7 +5,7 @@ function Map() {
     const navigation = useNavigation();
     useLayoutEffect(() => {
         navigation.setOptions({
-          headerShown: false,
+          
         });
       }, []);
   return (
