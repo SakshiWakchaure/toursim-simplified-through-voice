@@ -13,10 +13,16 @@ import '../screens/index.css'
 // import '../screens/App.css'
 import '../screens/New_sign'
 import { useLayoutEffect } from 'react'
+import '../screens/New.css'
+import  axios  from 'axios'
+import { values } from 'regenerator-runtime'
+//import '../backend/server'
+//import { useNavigation } from 'react-router-dom'
 
 const New = () => {
   const navigate = useNavigation();
   useLayoutEffect(() => {
+
     navigate.setOptions({
       headerShown: false,
     });
@@ -35,11 +41,11 @@ const [data,setData] = useState([]);
 console.log(inpval);
 
 const getdata = (e) => {
-    // console.log(e.target.value);
+    //console.log(e.target.value);
 
 
     const { value, name } = e.target;
-    // console.log(value,name);
+    //console.log(value,name);
 
 
     setInpval(() => {
@@ -53,6 +59,10 @@ const getdata = (e) => {
 
 const addData = (e) => {
     e.preventDefault();
+
+    axios.post('http://localhost:19006/New', inpval)
+    .then(res=>console.log("Registered Successfully"))
+    .catch(err=>console.log(err))
 
     const { name, email, date, password } = inpval;
 
@@ -83,7 +93,15 @@ const addData = (e) => {
     } else {
         toast.success('Data Added Succesfully!!')
         console.log("data added succesfully");
-        navigate("/New_sign")
+
+        //axios.post('http://localhost:8081', values);
+        // axios.post('http://localhost:19006/New', inpval)
+       // .then(res=> console.log(res))
+       // .catch(err=> console.log(err));
+
+
+        // navigate("/New_sign");
+        navigate.navigate('New_sign');
         localStorage.setItem("useryoutube",JSON.stringify([...data,inpval]));
 
     }
@@ -91,12 +109,13 @@ const addData = (e) => {
 }
   return (
     <>
-            <div className="container mt-3">
+    <div className='login_bg'>
+            <div className="container_login">
                 <section className='d-flex justify-content-between'>
                     <div className="left_data mt-3 p-3" style={{ width: "100%" }}>
                         <h3 className='text-center col-lg-6'>Sign Up</h3>
-                        <Form >
-                            <Form.Group className="mb-3 col-lg-6" controlId="formBasicName">
+                        <Form onSubmit={addData}>
+                            <Form.Group className="form" controlId="formBasicName">
 
                                 <Form.Control type="text" name='name' onChange={getdata} placeholder="Enter Your Name" />
                             </Form.Group>
@@ -105,8 +124,12 @@ const addData = (e) => {
                                 <Form.Control type="email" name='email' onChange={getdata} placeholder="Enter email" />
                             </Form.Group>
 
-                            <Form.Group className="mb-3 col-lg-6" controlId="formBasicDate">
+                            {/* <Form.Group className="mb-3 col-lg-6" controlId="formBasicDate">
 
+                                <Form.Control onChange={getdata} name='bdate' type="date" />
+                            </Form.Group> */}
+
+                            <Form.Group className="mb-3 col-lg-6" controlId="formBasicDate">
                                 <Form.Control onChange={getdata} name='date' type="date" />
                             </Form.Group>
 
@@ -114,16 +137,17 @@ const addData = (e) => {
 
                                 <Form.Control type="password" name='password' onChange={getdata} placeholder="Password" />
                             </Form.Group>
-                            <Button variant="primary" className='col-lg-6' onClick={addData} style={{ background: "rgb(67, 185, 127)" }} type="submit">
+                            <Button variant="primary" className=' button' onClick={addData} style={{ background: "rgb(67, 185, 127)" }} type="submit">
                                 Submit
                             </Button>
                         </Form>
-                        <p className='mt-3'>Already Have an Account <span><a onClick={()=>navigate.navigate('New_sign')} href="#New_sign">SignIn</a></span> </p>
+                        <p className='acc'>Already Have an Account <span><a onClick={()=>navigate.navigate('New_sign')} href="#New_sign">SignIn</a></span> </p>
                     </div>
                     <SIgn_img />
                 </section>
                 <ToastContainer />
             </div>
+    </div>
         </>
  
   )

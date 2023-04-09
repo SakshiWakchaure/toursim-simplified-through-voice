@@ -30,7 +30,7 @@ const Discover = () => {
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      headerShown: false,
+      // headerShown: false,
     });
   }, []);
 
@@ -75,7 +75,7 @@ const Discover = () => {
             console.log(data,details);
           }}
           query={{
-            key: "f410d8d22bmsh143fb06809e8aa1p186f60jsnc8899cd3f1aa",
+            key: "AIzaSyCUfeh1Ugxb8lQjPxOOTDQNBG6vidfupMg",
             language: "en",
           }}
 

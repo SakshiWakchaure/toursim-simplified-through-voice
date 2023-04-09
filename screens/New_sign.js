@@ -4,11 +4,12 @@ import { useNavigation } from '@react-navigation/native'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import SIgn_img from './SIgn_img'
-//import { useNavigation } from 'react-router-dom'
+//import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useLayoutEffect } from 'react'
 import '../screens/App.css'
+import '../screens/New_sign.css'
 
 import { useState } from 'react'
 const New_sign = () => {
@@ -84,7 +85,7 @@ const New_sign = () => {
 
                     localStorage.setItem("user_login", JSON.stringify(userlogin))
 
-                    navigate("/details")
+                    //navigate("/details")
                 }
             }
         }
@@ -93,7 +94,8 @@ const New_sign = () => {
 
   return (
     <>
-    <div className="container mt-3">
+    <div className='signin_bg'>
+    <div className="container_signin">
         <section className='d-flex justify-content-between'>
             <div className="left_data mt-3 p-3" style={{ width: "100%" }}>
                 <h3 className='text-center col-lg-6'>Sign IN</h3>
@@ -108,16 +110,19 @@ const New_sign = () => {
 
                         <Form.Control type="password" name='password' onChange={getdata} placeholder="Password" />
                     </Form.Group>
-                    <Button variant="primary" className='col-lg-6' onClick={addData} style={{ background: "rgb(67, 185, 127)" }} type="submit">
+                    <a onClick={()=>navigate.navigate('Home')} href='#Home'>
+                    <Button variant="primary" className='button' onClick={addData} style={{ background: "rgb(67, 185, 127)" }} type="submit" >
                         Submit
                     </Button>
+                    </a>
                     
                 </Form>
-                <p className='mt-3'>Already Have an Account <span>SignIn</span> </p>
+                <p className='acc'>Already Have an Account <span>SignIn</span> </p>
             </div>
             <SIgn_img />
         </section>
         <ToastContainer />
+    </div>
     </div>
 </>
 

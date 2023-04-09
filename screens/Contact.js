@@ -4,15 +4,16 @@ import { useNavigation } from '@react-navigation/native'
 import { useLayoutEffect } from 'react'
 import { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
+//import { useNavigate } from 'react-router-dom'
 
 const Contact = () => {
 
   const navigate = useNavigation();
-        useLayoutEffect(() => {
-            navigate.setOptions({
+        // useLayoutEffect(() => {
+        //     navigate.setOptions({
             
-            });
-        }, []);
+        //     });
+        // }, []);
 
   return (
     <div className='background-img'>
