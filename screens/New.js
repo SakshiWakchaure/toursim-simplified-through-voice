@@ -60,7 +60,7 @@ const getdata = (e) => {
 const addData = (e) => {
     e.preventDefault();
 
-    axios.post('http://localhost:19006/New', inpval)
+    axios.post('http://localhost:8081/users', inpval)
     .then(res=>console.log("Registered Successfully"))
     .catch(err=>console.log(err))
 
@@ -68,27 +68,27 @@ const addData = (e) => {
 
     if (name === "") {
         toast.error(' name field is requred!',{
-            position: "top-center",
+            position: "bottom-left",
         });
     } else if (email === "") {
          toast.error('email field is requred',{
-            position: "top-center",
+            position:  "bottom-left",
         });
     } else if (!email.includes("@")) {
          toast.error('plz enter valid email addres',{
-            position: "top-center",
+            position: "bottom-left",
         });
-    } else if (date === "") {
-         toast.error('date field is requred',{
-            position: "top-center",
-        });
+    // } else if (date === "") {
+    //      toast.error('date field is requred',{
+    //         position: "top-center",
+    //     });
     } else if (password === "") {
          toast.error('password field is requred',{
-            position: "top-center",
+            position: "bottom-left",
         });
     } else if (password.length < 5) {
          toast.error('password length greater five',{
-            position: "top-center",
+            position: "bottom-left",
         });
     } else {
         toast.success('Data Added Succesfully!!')

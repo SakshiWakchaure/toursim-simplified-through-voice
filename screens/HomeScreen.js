@@ -47,19 +47,19 @@ const HomeScreen = () => {
         <div className="menu-link">
         <ul>
 
-          <a className="home "  onClick={() => navigate.navigate("HomeScreen")} to="#HomeScreen">Home</a>   
+          <a className="home "  onClick={() => navigate.navigate("HomeScreen")} href="#HomeScreen">Home</a>   
 
-          <a className="discover" onClick={() => navigate.navigate("Discover")}  to="#Discover">Discover</a>           
+          <a className="discover" onClick={() => navigate.navigate("Discover")}  href="#Discover">Discover</a>           
                         
-          <a className="map" onClick={() => navigate.navigate("Map")} to="#Map">Map</a>           
+          <a className="map" onClick={() => navigate.navigate("Map")} href="#Map">Map</a>           
            
-          <a className="contact" onClick={()=> navigate.navigate("Contact")} to="#Contact">Contact</a>           
+          <a className="contact" onClick={()=> navigate.navigate("Contact")} href="#Contact">Contact</a>           
           
 
           <ul className="icon">
             {/* <NavLink to="/New"><BsFillPersonFill></BsFillPersonFill></NavLink> */}
             
-              <a className="icon" onClick={() => navigate.navigate("New")} to="#New"><BsFillPersonFill></BsFillPersonFill>
+              <a className="icon" onClick={() => navigate.navigate(New)} href="#New"><BsFillPersonFill></BsFillPersonFill>
                 </a>            
           </ul>          
         </ul>

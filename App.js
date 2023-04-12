@@ -25,10 +25,13 @@ import SpeechRecognition,{useSpeechRecognition} from "react-speech-recognition";
 import { useFocusEffect } from "@react-navigation/native";
 import { useLayoutEffect } from "react";
 //import { Navigate, useNavigate } from "react-router-dom";
-import {useHistory} from 'react-router-dom';
+//import {useHistory} from 'react-router-dom';
 import { useRef } from "react";
 console.reportErrorsAsExceptions = false;
 const Stack = createNativeStackNavigator();
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function App() {
 
@@ -41,54 +44,100 @@ export default function App() {
   // //     headerShown: false,
   // //   });
   // // }, []);
+     // const navigate = useNavigate();
+      const [transcript, setTranscript] = useState('');
+  //     const [transcript, setTranscript] = useState('');
 
 
-  console.log(recognition)
-  recognition.start()
+  useEffect(() => {
+    const recognition = new window.webkitSpeechRecognition();
+    recognition.onresult = (event) => {
+      const last = event.results.length - 1;
+      const command = event.results[last][0].transcript;
+      setTranscript(command);
+      console.log(command);
+    };
 
-  recognition.onresult=(event)=>{
-  
-    const command =event.results[0][0].transcript;
-    //console.log(command);
+    recognition.start();
+
+    return () => {
+      recognition.stop();
+    };
+  }, []);
+
+
+  useEffect(() => {
     
-    if(command.includes("navigate to") || command.includes("go to")){
+    switch (transcript.toLowerCase()) {
+      case 'home':
+        //navigate('/HomeScreen');
+        break;
+      case 'Discover':
+       // navigate('/Discover');
+        break;
+        case 'Map':
+       //   navigate('/Map');
+          break;
+      case 'contact':
+      //  navigate('/contact');
+        break;
+
+        case 'login':
+      //    navigate('/New');
+          break;
+      default:
+        break;
+    }
+  
+  }, [transcript]);
+
+
+
+  // console.log(recognition)
+  // recognition.start()
+
+  // recognition.onresult=(event)=>{
+  
+  //   const command =event.results[0][0].transcript;
+  //     console.log(command);
+    
+  //   if(command.includes("navigate to") || command.includes("go to")){
       
-       if(command.includes("homepage") || command.includes("indexpage")){
-          //navigate.push("/HomeScreen")
-           //navigate.push("/HomeScreen")
-          //navigation.push()
-             console.log(command);
-        }
-        else if(command.includes("Discover") || command.includes("Discover page")){
-    //    navigate.push("/Discover")
-              console.log(command);
-      }
-        else if(command.includes("Map") || command.includes("Map page")){
-    //    navigate.push("/Map")
-              console.log(command);
-      }
-        else if(command.includes("Contact") || command.includes("Contact page")){
-    //    navigate.push("/Contact")
-              console.log(command);
-      }
-        else if(command.includes("Sign up") || command.includes("Sign up page")){
-    //    navigate.push("/New")
-              console.log(command);
-      }
-   }
-  }
+  //      if(command.includes("homepage") || command.includes("indexpage")){
+  //         //navigate.push("/HomeScreen")
+  //          //navigate.push("/HomeScreen")
+  //         //navigation.push()
+  //            console.log(command);
+  //       }
+  //       else if(command.includes("Discover") || command.includes("Discover page")){
+  //   //    navigate.push("/Discover")
+  //             console.log(command);
+  //     }
+  //       else if(command.includes("Map") || command.includes("Map page")){
+  //   //    navigate.push("/Map")
+  //             console.log(command);
+  //     }
+  //       else if(command.includes("Contact") || command.includes("Contact page")){
+  //   //    navigate.push("/Contact")
+  //             console.log(command);
+  //     }
+  //       else if(command.includes("Sign up") || command.includes("Sign up page")){
+  //   //    navigate.push("/New")
+  //             console.log(command);
+  //     }
+  //  }
+  // }
 
-  recognition.onend=()=>{
-    recognition.start()
+  // recognition.onend=()=>{
+  //   recognition.start()
 
-  }
+  // }
   return (
     
     <TailwindProvider>
       <NavigationContainer>
         <Stack.Navigator>
-          
-          
+                  
           <Stack.Screen name="Home" component={HomeScreen} />
           
           <Stack.Screen name="Discover" component={Discover} />

@@ -18,17 +18,16 @@ const db=mysql.createConnection({
 })
 
 app.post('/users', (req,res)=>{
-    const sql="INSERT INTO users (name, email, bdate, password) VALUES (?)";
+    const sql="INSERT INTO users (name, email,  password) VALUES (?)";
     const inpval = [
         req.body.name,
         req.body.email,
-        req.body.bdate,
         req.body.password
     ]
 
     db.query(sql,[inpval], (err, data) =>{
         if(err){
-            return res.json("Error");
+            return res.json(err);
         }
         return res.json(data);
     })
