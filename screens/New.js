@@ -111,30 +111,30 @@ const addData = (e) => {
 
 
 
-useEffect(() => {
+// useEffect(() => {
 
-  // const ALAN_Key = '8ccd1f91b8af8a64264eb1cfa0e9cbcd2e956eca572e1d8b807a3e2338fdd0dc/stage'
+//   // const ALAN_Key = '8ccd1f91b8af8a64264eb1cfa0e9cbcd2e956eca572e1d8b807a3e2338fdd0dc/stage'
 
-  alanBtn({
-      key: '8ccd1f91b8af8a64264eb1cfa0e9cbcd2e956eca572e1d8b807a3e2338fdd0dc/stage',
-      onCommand: (commandData) => {
-        if(commandData.command === 'name'){
-          setName(commandData.data)
-        }
+//   alanBtn({
+//       key: '8ccd1f91b8af8a64264eb1cfa0e9cbcd2e956eca572e1d8b807a3e2338fdd0dc/stage',
+//       onCommand: (commandData) => {
+//         if(commandData.command === 'name'){
+//           setName(commandData.data)
+//         }
         
-        if(commandData.command === 'address'){
-          setAddress(commandData.data)
-        }
-        if(commandData.command === 'phone'){
-          setPhone(commandData.data)
-        }
-        if(commandData.command === 'password'){
-          setPassword(commandData.data)
-        }
-      }
+//         if(commandData.command === 'address'){
+//           setAddress(commandData.data)
+//         }
+//         if(commandData.command === 'phone'){
+//           setPhone(commandData.data)
+//         }
+//         if(commandData.command === 'password'){
+//           setPassword(commandData.data)
+//         }
+//       }
     
-});
-});
+// });
+// });
   return (
     <>
     <div className='login_bg'>

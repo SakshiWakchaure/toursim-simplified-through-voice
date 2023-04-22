@@ -1,4 +1,16 @@
 
+/* .bg{
+  background-image: url(contactbg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+} */
+.App{
+  height: 50%;
+  position: absolute;
+  height: 90%;
+  width: 120%;
+}
 
 .home ,.discover, .map, .contact{
   color: beige;
@@ -19,7 +31,6 @@
     color: rgb(183, 131, 231);
     font-size: 5rem;
     padding-top: 0%;
-    
 }
 
 .head4{
@@ -33,7 +44,7 @@ video{
   
     width: 100%;
     height: 100%;
-    position: absolute;
+    /* position: absolute; */
     object-fit: cover;
 
 }

@@ -13,26 +13,26 @@ function Contact() {
   const [phone, setPhone] = useState('')
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('');
-  const ALAN_Key = '791faaaeb3577dd095292ed5ff8657242e956eca572e1d8b807a3e2338fdd0dc/stage'
-  useEffect(() => {
-    alanBtn({
-        key: ALAN_Key,
-        onCommand: (commandData) => {
-          if(commandData.command === 'name'){
-            setName(commandData.data)
-          }
-          if(commandData.command === 'phone'){
-            setPhone(commandData.data)
-          }
-          if(commandData.command === 'subject'){
-            setSubject(commandData.data)
-          }
-          if(commandData.command === 'message'){
-            setMessage(commandData.data)
-          }
-        }
-    });
-  });
+  //const ALAN_Key = '791faaaeb3577dd095292ed5ff8657242e956eca572e1d8b807a3e2338fdd0dc/stage'
+  // useEffect(() => {
+  //   alanBtn({
+  //       key:  '791faaaeb3577dd095292ed5ff8657242e956eca572e1d8b807a3e2338fdd0dc/stage',
+  //       onCommand: (commandData) => {
+  //         if(commandData.command === 'name'){
+  //           setName(commandData.data)
+  //         }
+  //         if(commandData.command === 'phone'){
+  //           setPhone(commandData.data)
+  //         }
+  //         if(commandData.command === 'subject'){
+  //           setSubject(commandData.data)
+  //         }
+  //         if(commandData.command === 'message'){
+  //           setMessage(commandData.data)
+  //         }
+  //       }
+  //   });
+  // });
   return (
     <div className='form-feild'>
     <div className='background-img'>

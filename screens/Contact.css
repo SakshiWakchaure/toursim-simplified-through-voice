@@ -3,7 +3,9 @@
     background-image: url(contactbg.jpg);
     background-repeat: no-repeat;
   background-size: cover;
-  height: 100rem;  
+  height: 50rem; 
+  width: 110rem;
+  
 }
 
 .from-container{

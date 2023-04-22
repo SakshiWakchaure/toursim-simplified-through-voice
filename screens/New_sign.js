@@ -94,24 +94,24 @@ const New_sign = () => {
 
     }
     const ALAN_Key = '8ccd1f91b8af8a64264eb1cfa0e9cbcd2e956eca572e1d8b807a3e2338fdd0dc/stage'
-    useEffect(() => {
-      alanBtn({
-          key: ALAN_Key,
-          onCommand: (commandData) => {
+    // useEffect(() => {
+    //   alanBtn({
+    //       key: ALAN_Key,
+    //       onCommand: (commandData) => {
            
-            if(commandData.command === 'phone'){
-              setPhone(commandData.data)
-            }
-            if(commandData.command === 'password'){
-              setPassword(commandData.data)
-            }
+    //         if(commandData.command === 'phone'){
+    //           setPhone(commandData.data)
+    //         }
+    //         if(commandData.command === 'password'){
+    //           setPassword(commandData.data)
+    //         }
             
-            //if(commandData.command === 'address'){
-            //  setAddress(commandData.data)
-            //}
-          }
-      });
-    });
+    //         //if(commandData.command === 'address'){
+    //         //  setAddress(commandData.data)
+    //         //}
+    //       }
+    //   });
+    // });
 
   return (
     <>

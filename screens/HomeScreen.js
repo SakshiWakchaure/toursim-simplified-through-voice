@@ -36,13 +36,36 @@ useEffect(() => {
   // const ALAN_Key = '8ccd1f91b8af8a64264eb1cfa0e9cbcd2e956eca572e1d8b807a3e2338fdd0dc/stage'
 
   const alanBtnInstance = alanBtn({
-      key: '8ccd1f91b8af8a64264eb1cfa0e9cbcd2e956eca572e1d8b807a3e2338fdd0dc/stage',
+      key: '430a13f1b732e4d146167c2e456cca552e956eca572e1d8b807a3e2338fdd0dc/stage',
       onCommand: (commandData) => {
         if(commandData.command === 'navigate to map'){
           //setName(commandData.data)
-          const map= commandData.page;
-          window.location.href='/Map'+map;
+          navigate.navigate('Map');
+          // const map= commandData.page;
+          // window.location.href='/Map'+map;
+          
         }
+        else if(commandData.command === 'navigate to discover'){
+          navigate.navigate('Discover');
+        }
+
+        else if(commandData.command === 'navigate to contact'){
+          navigate.navigate('Contact');
+        }
+        else if(commandData.command === 'navigate to signup'){
+          navigate.navigate('New');
+        }
+        else if(commandData.command === 'navigate to login'){
+          navigate.navigate('New_sign');
+        }
+        else if(commandData.command==='go back home'){
+          navigate.navigate('Home');
+        }
+        else if(commandData.command === 'name'){
+          setPhone(commandData.data)
+        }
+
+        
         
         // if(commandData.command === 'address'){
         //   setAddress(commandData.data)
@@ -57,9 +80,11 @@ useEffect(() => {
 });
 });
   return (
+    
 
   
     <SafeAreaView className=" bg-beige flex-1 relative">
+      <div className="bg">
 
 <nav className="main-nav">
         {/* 1st logo part  */}
@@ -95,12 +120,12 @@ useEffect(() => {
       </nav>
 
       {/* First Section */}
-      {/* <div className="App">
+      <div className="App">
         <video autoPlay loop muted >
           <source src={vid} type="video/mp4"/>
         </video>
 
-      </div> */}
+      </div>
 
       {/* <View className="flex-row px-6 mt-8 items-center space-x-2">
         <View className="w-16 h-16 bg-black rounded-full items-center justify-center">
@@ -117,19 +142,18 @@ useEffect(() => {
 
         <h2 className="head4">
         Discover New Places With Us, Adventure Awaits !
-        </h2>
-
-
-        
+        </h2>       
 
       </View>
 
       
       {/* Circle Section */}
-      <View className="w-[400px] h-[400px] bg-[#00BCC9] rounded-full absolute bottom-36 -right-36 "></View>
-      <View className="w-[400px] h-[400px] bg-[#E99265] rounded-full absolute -bottom-28 -left-36 position-absolute"></View>
+      {/* <View className="w-[400px] h-[400px] bg-[#00BCC9] rounded-full absolute bottom-36 -right-36 "></View>
+      <View className="w-[400px] h-[400px] bg-[#E99265] rounded-full absolute -bottom-28 -left-36 position-absolute"></View> */}
 
-    </SafeAreaView>
+    
+      </div>
+      </SafeAreaView>
 
     
 
